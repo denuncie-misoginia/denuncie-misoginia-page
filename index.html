@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Informação e orientação sobre misoginia e violência de gênero no ambiente digital.">
+  <title>Denuncie Misoginia — Informação, proteção e denúncia</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            plum: '#31111d',
+            berry: '#be185d',
+            rose: '#db2777',
+            crimson: '#9f1239',
+            cream: '#fff5f5'
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 16px 45px rgba(49,17,29,.10)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    :focus-visible { outline: 3px solid #db2777; outline-offset: 3px; }
+    .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; }
+    .skip-link:focus { top: 1rem; }
+    .hero-grid {
+      background-image: linear-gradient(rgba(255,245,245,.9) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,245,245,.9) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+    .faq-answer { display: none; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .check-card.done { border-color: #be185d; background: #fff1f6; }
+    .check-card.done .check-title { text-decoration: line-through; }
+  </style>
+</head>
+
+<body class="bg-cream text-plum font-sans antialiased">
+  <a href="#conteudo" class="skip-link bg-plum text-white px-4 py-3 rounded-lg">Pular para o conteúdo</a>
+
+  <div class="bg-plum text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
+      <p class="truncate">Informação não substitui orientação jurídica ou atendimento de emergência.</p>
+      <a href="tel:190" class="font-bold underline whitespace-nowrap">Emergência: 190</a>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-rose-100">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between" aria-label="Navegação principal">
+      <a href="#inicio" class="flex items-center gap-2 font-extrabold tracking-tight" aria-label="Denuncie Misoginia — início">
+        <span class="w-10 h-10 rounded-xl bg-plum text-white grid place-items-center"><i data-lucide="shield-check"></i></span>
+        <span>Denuncie <span class="text-berry">Misoginia</span></span>
+      </a>
+
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a class="hover:text-berry" href="#projeto">O Projeto de Lei</a>
+        <a class="hover:text-berry" href="#denunciar">Como Denunciar</a>
+        <a class="hover:text-berry" href="#direitos">Seus Direitos</a>
+        <a class="hover:text-berry" href="#faq">Perguntas Frequentes</a>
+        <a href="tel:180" class="inline-flex items-center gap-2 rounded-full bg-berry text-white px-4 py-2 hover:bg-crimson transition">
+          <i data-lucide="phone" class="w-4 h-4"></i> Ligue 180
+        </a>
+        <button id="quickExit" class="inline-flex items-center gap-2 rounded-full bg-crimson text-white px-4 py-2 hover:bg-plum transition" type="button">
+          <i data-lucide="log-out" class="w-4 h-4"></i> Saída Rápida
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden border-t border-rose-100 bg-white px-4 pb-4">
+      <div class="flex flex-col gap-2 pt-3 text-sm font-semibold">
+        <a class="py-3" href="#projeto">O Projeto de Lei</a>
+        <a class="py-3" href="#denunciar">Como Denunciar</a>
+        <a class="py-3" href="#direitos">Seus Direitos</a>
+        <a class="py-3" href="#faq">Perguntas Frequentes</a>
+        <a class="py-3 text-berry" href="tel:180">Ligue 180</a>
+        <button id="quickExitMobile" class="text-left py-3 text-crimson font-bold" type="button">Saída Rápida</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section id="inicio" class="relative overflow-hidden">
+      <div class="absolute inset-0 hero-grid opacity-40"></div>
+      <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-28 grid lg:grid-cols-[1.1fr_.9fr] gap-12 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-rose-200 px-4 py-2 text-sm font-bold text-crimson">
+            <span class="w-2 h-2 rounded-full bg-rose"></span>
+            Conscientização e cidadania digital
+          </span>
+          <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-[.98] mt-6">
+            Ódio contra mulheres <span class="text-berry">não deve ser normalizado.</span>
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-plum/75 max-w-2xl leading-relaxed">
+            Informação para reconhecer a violência de gênero online, preservar evidências e conhecer os caminhos de denúncia e proteção.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#denunciar" class="inline-flex justify-center items-center gap-2 rounded-xl bg-plum text-white px-6 py-4 font-bold hover:bg-crimson transition shadow-soft">
+              <i data-lucide="file-check-2"></i> Como coletar provas
+            </a>
+            <a href="#canais" class="inline-flex justify-center items-center gap-2 rounded-xl bg-white border border-rose-200 px-6 py-4 font-bold hover:border-berry hover:text-berry transition">
+              <i data-lucide="megaphone"></i> Canais de denúncia
+            </a>
+          </div>
+          <p class="mt-4 text-xs text-plum/60">Em perigo imediato, procure um adulto de confiança e acione o serviço de emergência local.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <article class="bg-plum text-white rounded-3xl p-6 shadow-soft col-span-2">
+            <p class="text-sm text-white/70">PL 896/2023</p>
+            <p class="font-display text-4xl mt-2">Misoginia em debate legislativo</p>
+            <p class="mt-3 text-white/75">A proposta busca incluir crimes praticados em razão de misoginia na legislação penal.</p>
+          </article>
+          <article class="bg-white rounded-3xl p-6 shadow-soft border border-rose-100">
+            <i data-lucide="users-round" class="text-berry"></i>
+            <p class="text-3xl font-extrabold mt-5">67–0</p>
+            <p class="text-sm text-plum/65 mt-1">votação no Senado que aprovou o texto em março de 2026</p>
+          </article>
+          <article class="bg-white rounded-3xl p-6 shadow-soft border border-rose-100">
+            <i data-lucide="clock-3" class="text-berry"></i>
+            <p class="text-3xl font-extrabold mt-5">24h</p>
+            <p class="text-sm text-plum/65 mt-1">funcionamento do Ligue 180</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projeto" class="bg-white border-y border-rose-100">
+      <div class="max-w-7xl mx-auto px-4 py-20">
+        <div class="max-w-3xl">
+          <span class="text-sm font-bold uppercase tracking-widest text-berry">O Projeto de Lei</span>
+          <h2 class="font-display text-4xl md:text-5xl mt-3">O que é o PL 896/2023?</h2>
+          <p class="mt-5 text-lg text-plum/75 leading-relaxed">
+            O PL 896/2023, de autoria da senadora Ana Paula Lobato, altera a Lei nº 7.716/1989 para incluir crimes praticados em razão de misoginia. O Senado aprovou o projeto em março de 2026 e a matéria segue em tramitação na Câmara dos Deputados.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mt-10">
+          <article class="rounded-2xl bg-cream p-7 border border-rose-100">
+            <i data-lucide="scale" class="text-berry"></i>
+            <h3 class="font-bold text-xl mt-5">Tipificação</h3>
+            <p class="mt-3 text-plum/70">A proposta busca reconhecer a misoginia no conjunto de crimes de preconceito ou discriminação.</p>
+          </article>
+          <article class="rounded-2xl bg-cream p-7 border border-rose-100">
+            <i data-lucide="monitor-smartphone" class="text-berry"></i>
+            <h3 class="font-bold text-xl mt-5">Ambiente digital</h3>
+            <p class="mt-3 text-plum/70">A violência praticada online não deixa de ser relevante por ocorrer em redes sociais, aplicativos ou plataformas digitais.</p>
+          </article>
+          <article class="rounded-2xl bg-cream p-7 border border-rose-100">
+            <i data-lucide="gavel" class="text-berry"></i>
+            <h3 class="font-bold text-xl mt-5">Responsabilização</h3>
+            <p class="mt-3 text-plum/70">A discussão legislativa procura fortalecer a resposta jurídica a condutas motivadas por ódio ou aversão às mulheres.</p>
+          </article>
+        </div>
+
+        <div class="mt-8 rounded-2xl bg-plum text-white p-7">
+          <p class="font-bold">Importante sobre o status do projeto</p>
+          <p class="mt-2 text-white/75">Esta página não apresenta o PL como lei vigente. O texto está em tramitação na Câmara. Consulte a fonte oficial para acompanhar alterações, emendas e o andamento.</p>
+          <a class="inline-flex items-center gap-2 mt-4 font-bold underline" href="https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2612930" target="_blank" rel="noopener noreferrer">
+            Consultar tramitação na Câmara <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="denunciar">
+      <div class="max-w-7xl mx-auto px-4 py-20">
+        <div class="max-w-3xl">
+          <span class="text-sm font-bold uppercase tracking-widest text-berry">Guia prático</span>
+          <h2 class="font-display text-4xl md:text-5xl mt-3">Como denunciar</h2>
+          <p class="mt-5 text-lg text-plum/75">Preserve informações sem colocar sua segurança em risco. Se possível, evite interagir com o agressor e procure orientação adequada.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-5 mt-10">
+          <article class="bg-white rounded-2xl p-7 border border-rose-100 shadow-soft">
+            <span class="text-berry font-extrabold">01</span>
+            <i data-lucide="camera" class="mt-5 text-berry"></i>
+            <h3 class="font-bold text-xl mt-4">Colete evidências</h3>
+            <p class="mt-3 text-plum/70">Guarde prints que mostrem contexto, data e hora quando disponíveis, URLs completas, nomes de usuário e informações do perfil. Em situações relevantes, pode ser útil buscar orientação jurídica sobre preservação formal da prova.</p>
+          </article>
+          <article class="bg-white rounded-2xl p-7 border border-rose-100 shadow-soft">
+            <span class="text-berry font-extrabold">02</span>
+            <i data-lucide="file-text" class="mt-5 text-berry"></i>
+            <h3 class="font-bold text-xl mt-4">Registre a ocorrência</h3>
+            <p class="mt-3 text-plum/70">Considere a Delegacia da Mulher, uma delegacia comum ou o serviço eletrônico oficial disponível no seu estado. Em caso de ameaça imediata, priorize a segurança e procure atendimento de emergência.</p>
+          </article>
+          <article class="bg-white rounded-2xl p-7 border border-rose-100 shadow-soft">
+            <span class="text-berry font-extrabold">03</span>
+            <i data-lucide="flag" class="mt-5 text-berry"></i>
+            <h3 class="font-bold text-xl mt-4">Denuncie na plataforma</h3>
+            <p class="mt-3 text-plum/70">Use as ferramentas de denúncia da própria rede e, quando aplicável, canais especializados como a SaferNet. Preserve o protocolo ou comprovante da denúncia.</p>
+          </article>
+        </div>
+
+        <div class="mt-12 bg-white rounded-3xl border border-rose-100 p-7 md:p-9 shadow-soft">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <span class="text-sm font-bold uppercase tracking-widest text-berry">Checklist</span>
+              <h3 class="font-display text-3xl mt-2">Estou preparada para registrar a denúncia?</h3>
+            </div>
+            <div id="progressText" class="font-bold text-berry">0 de 5 concluídos</div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-3 mt-7">
+            <label class="check-card flex gap-4 items-start rounded-xl border border-rose-100 p-4 cursor-pointer transition">
+              <input class="check mt-1 w-5 h-5 accent-pink-700" type="checkbox">
+              <span><strong class="check-title">Salvei os prints relevantes</strong><br><small class="text-plum/60">Incluindo contexto suficiente para entender a ocorrência.</small></span>
+            </label>
+            <label class="check-card flex gap-4 items-start rounded-xl border border-rose-100 p-4 cursor-pointer transition">
+              <input class="check mt-1 w-5 h-5 accent-pink-700" type="checkbox">
+              <span><strong class="check-title">Registrei URLs e perfis</strong><br><small class="text-plum/60">Guardei links, nomes de usuário e identificadores disponíveis.</small></span>
+            </label>
+            <label class="check-card flex gap-4 items-start rounded-xl border border-rose-100 p-4 cursor-pointer transition">
+              <input class="check mt-1 w-5 h-5 accent-pink-700" type="checkbox">
+              <span><strong class="check-title">Anotei data e horário</strong><br><small class="text-plum/60">Quando essas informações estiverem disponíveis.</small></span>
+            </label>
+            <label class="check-card flex gap-4 items-start rounded-xl border border-rose-100 p-4 cursor-pointer transition">
+              <input class="check mt-1 w-5 h-5 accent-pink-700" type="checkbox">
+              <span><strong class="check-title">Guardei os protocolos</strong><br><small class="text-plum/60">Da plataforma, atendimento ou registro policial, quando houver.</small></span>
+            </label>
+            <label class="check-card md:col-span-2 flex gap-4 items-start rounded-xl border border-rose-100 p-4 cursor-pointer transition">
+              <input class="check mt-1 w-5 h-5 accent-pink-700" type="checkbox">
+              <span><strong class="check-title">Priorizei minha segurança</strong><br><small class="text-plum/60">Não coloquei minha segurança em risco para obter mais evidências.</small></span>
+            </label>
+          </div>
+          <p id="checkMessage" class="mt-5 text-sm font-semibold text-plum/70" aria-live="polite">Você pode marcar os itens conforme avança.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="canais" class="bg-plum text-white">
+      <div class="max-w-7xl mx-auto px-4 py-20">
+        <div class="max-w-3xl">
+          <span class="text-sm font-bold uppercase tracking-widest text-pink-200">Canais de atendimento</span>
+          <h2 class="font-display text-4xl md:text-5xl mt-3">Procure o canal adequado</h2>
+          <p class="mt-5 text-white/75">Em emergência, a prioridade é sair de uma situação de risco e buscar ajuda imediata.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+          <article class="rounded-2xl bg-white/10 border border-white/15 p-6">
+            <i data-lucide="phone-call" class="text-pink-200"></i>
+            <h3 class="font-bold text-xl mt-5">Ligue 180</h3>
+            <p class="text-white/70 text-sm mt-2">Central da Mulher, gratuita e 24h.</p>
+            <div class="mt-5 flex gap-2">
+              <a href="tel:180" class="rounded-lg bg-white text-plum px-4 py-2 font-bold text-sm">Ligar</a>
+              <button class="copyBtn rounded-lg border border-white/30 px-4 py-2 font-bold text-sm" data-copy="180">Copiar</button>
+            </div>
+            <p class="text-xs text-white/50 mt-3">WhatsApp: (61) 9610-0180</p>
+          </article>
+
+          <article class="rounded-2xl bg-white/10 border border-white/15 p-6">
+            <i data-lucide="siren" class="text-pink-200"></i>
+            <h3 class="font-bold text-xl mt-5">190</h3>
+            <p class="text-white/70 text-sm mt-2">Polícia Militar para emergências.</p>
+            <div class="mt-5 flex gap-2">
+              <a href="tel:190" class="rounded-lg bg-white text-plum px-4 py-2 font-bold text-sm">Ligar</a>
+              <button class="copyBtn rounded-lg border border-white/30 px-4 py-2 font-bold text-sm" data-copy="190">Copiar</button>
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white/10 border border-white/15 p-6">
+            <i data-lucide="globe" class="text-pink-200"></i>
+            <h3 class="font-bold text-xl mt-5">SaferNet</h3>
+            <p class="text-white/70 text-sm mt-2">Canal para denúncias de crimes e violações de direitos humanos na internet.</p>
+            <a href="https://new.safernet.org.br/denuncie/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 rounded-lg bg-white text-plum px-4 py-2 font-bold text-sm">Denunciar <i data-lucide="external-link" class="w-4 h-4"></i></a>
+          </article>
+
+          <article class="rounded-2xl bg-white/10 border border-white/15 p-6">
+            <i data-lucide="landmark" class="text-pink-200"></i>
+            <h3 class="font-bold text-xl mt-5">Ministério Público</h3>
+            <p class="text-white/70 text-sm mt-2">Procure o MPF ou o Ministério Público do seu estado conforme o caso.</p>
+            <a href="https://www.mpf.mp.br/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 rounded-lg bg-white text-plum px-4 py-2 font-bold text-sm">MPF <i data-lucide="external-link" class="w-4 h-4"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="direitos" class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="text-sm font-bold uppercase tracking-widest text-berry">Seus direitos</span>
+            <h2 class="font-display text-4xl md:text-5xl mt-3">Você não precisa enfrentar isso sozinha.</h2>
+            <p class="mt-5 text-lg text-plum/75 leading-relaxed">Buscar informação, apoio e atendimento é um direito. A estratégia adequada depende do tipo de violência, do risco e das circunstâncias do caso.</p>
+          </div>
+          <div class="space-y-3">
+            <div class="rounded-2xl bg-cream p-5 border border-rose-100 flex gap-4"><i data-lucide="heart-handshake" class="text-berry shrink-0"></i><span><strong>Procure uma rede de apoio.</strong><br><span class="text-plum/65">Uma pessoa adulta de confiança, serviço especializado ou autoridade pode ajudar a definir os próximos passos.</span></span></div>
+            <div class="rounded-2xl bg-cream p-5 border border-rose-100 flex gap-4"><i data-lucide="lock-keyhole" class="text-berry shrink-0"></i><span><strong>Proteja suas contas.</strong><br><span class="text-plum/65">Revise senhas, autenticação em dois fatores e configurações de privacidade.</span></span></div>
+            <div class="rounded-2xl bg-cream p-5 border border-rose-100 flex gap-4"><i data-lucide="ban" class="text-berry shrink-0"></i><span><strong>Não reforce a exposição.</strong><br><span class="text-plum/65">Evite compartilhar novamente conteúdo abusivo apenas para denunciar.</span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="bg-cream">
+      <div class="max-w-4xl mx-auto px-4 py-20">
+        <span class="text-sm font-bold uppercase tracking-widest text-berry">Perguntas frequentes</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-3">Dúvidas comuns</h2>
+
+        <div class="mt-8 space-y-3">
+          <article class="faq-item bg-white rounded-2xl border border-rose-100 overflow-hidden">
+            <button class="faq-btn w-full flex justify-between items-center text-left p-5 font-bold" aria-expanded="false">
+              Posso denunciar de forma anônima?
+              <i data-lucide="chevron-down" class="faq-chevron transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-plum/70">Alguns canais aceitam denúncias anônimas. A SaferNet informa que sua Central de Denúncias recebe denúncias anônimas de crimes e violações de direitos humanos na internet. O procedimento e a possibilidade de anonimato variam conforme o órgão e o tipo de ocorrência.</div>
+          </article>
+
+          <article class="faq-item bg-white rounded-2xl border border-rose-100 overflow-hidden">
+            <button class="faq-btn w-full flex justify-between items-center text-left p-5 font-bold" aria-expanded="false">
+              Print de WhatsApp serve como prova?
+              <i data-lucide="chevron-down" class="faq-chevron transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-plum/70">Um print pode ajudar a documentar uma ocorrência, mas seu valor probatório depende do contexto e da avaliação da autoridade competente. Preserve também o conteúdo original, links, datas, perfil e demais informações disponíveis. Para casos relevantes, orientação jurídica pode indicar formas adicionais de preservação.</div>
+          </article>
+
+          <article class="faq-item bg-white rounded-2xl border border-rose-100 overflow-hidden">
+            <button class="faq-btn w-full flex justify-between items-center text-left p-5 font-bold" aria-expanded="false">
+              O que fazer se as mensagens forem apagadas?
+              <i data-lucide="chevron-down" class="faq-chevron transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-plum/70">Não apague outras evidências que ainda existam. Guarde prints, notificações, nomes de usuário, links e informações de contexto. Se outras pessoas receberam ou visualizaram o conteúdo, elas podem ter informações úteis. Procure uma autoridade ou orientação jurídica sobre preservação e obtenção de registros.</div>
+          </article>
+
+          <article class="faq-item bg-white rounded-2xl border border-rose-100 overflow-hidden">
+            <button class="faq-btn w-full flex justify-between items-center text-left p-5 font-bold" aria-expanded="false">
+              Quem procurar em caso de ameaça física iminente?
+              <i data-lucide="chevron-down" class="faq-chevron transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-plum/70">Em uma emergência imediata, procure um local seguro e acione a Polícia Militar pelo 190. Se for possível, peça ajuda a uma pessoa adulta de confiança. Para orientação e encaminhamento na rede de atendimento às mulheres, o Ligue 180 funciona 24 horas.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-plum text-white">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <div class="font-extrabold text-xl">Denuncie <span class="text-pink-300">Misoginia</span></div>
+          <p class="mt-3 text-white/60 text-sm">Informação para uma internet mais segura e uma sociedade com menos violência de gênero.</p>
+        </div>
+        <div>
+          <h2 class="font-bold">Links úteis</h2>
+          <div class="mt-3 space-y-2 text-sm text-white/70">
+            <a class="block hover:text-white" href="tel:180">Ligue 180</a>
+            <a class="block hover:text-white" href="tel:190">Polícia Militar — 190</a>
+            <a class="block hover:text-white" href="tel:188">CVV — 188</a>
+            <a class="block hover:text-white" href="https://new.safernet.org.br/denuncie/" target="_blank" rel="noopener noreferrer">SaferNet — Denuncie</a>
+          </div>
+        </div>
+        <div>
+          <h2 class="font-bold">Aviso legal</h2>
+          <p class="mt-3 text-sm text-white/60">Conteúdo de caráter informativo. Não constitui aconselhamento jurídico, psicológico ou serviço de emergência. O status do PL pode mudar; consulte fontes oficiais.</p>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/50">
+        <span>© 2026 Denuncie Misoginia</span>
+        <span>Privacidade · Acessibilidade · Uso responsável</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite" class="fixed bottom-5 left-1/2 -translate-x-1/2 translate-y-20 opacity-0 transition-all bg-plum text-white px-5 py-3 rounded-xl shadow-soft text-sm font-semibold pointer-events-none"></div>
+
+  <script>
+    lucide.createIcons();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      menuBtn.setAttribute('aria-label', open ? 'Abrir menu' : 'Fechar menu');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    function quickExit() {
+      // Limpa estados visuais antes de sair.
+      document.querySelectorAll('input[type="checkbox"]').forEach(i => i.checked = false);
+      document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('open'));
+      sessionStorage.clear();
+      location.replace('https://www.google.com/');
+    }
+
+    document.getElementById('quickExit').addEventListener('click', quickExit);
+    document.getElementById('quickExitMobile').addEventListener('click', quickExit);
+
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 1800);
+    }
+
+    document.querySelectorAll('.copyBtn').forEach(button => {
+      button.addEventListener('click', async () => {
+        const value = button.dataset.copy;
+        try {
+          await navigator.clipboard.writeText(value);
+          showToast(`${value} copiado.`);
+        } catch {
+          showToast(`Não foi possível copiar. Número: ${value}`);
+        }
+      });
+    });
+
+    const checks = [...document.querySelectorAll('.check')];
+    const progressText = document.getElementById('progressText');
+    const checkMessage = document.getElementById('checkMessage');
+
+    function updateChecklist() {
+      const done = checks.filter(c => c.checked).length;
+      progressText.textContent = `${done} de ${checks.length} concluídos`;
+      checks.forEach(c => c.closest('.check-card').classList.toggle('done', c.checked));
+      checkMessage.textContent = done === checks.length
+        ? 'Checklist concluído. Ainda assim, siga a orientação do canal de atendimento e priorize sua segurança.'
+        : 'Você pode marcar os itens conforme avança.';
+    }
+    checks.forEach(c => c.addEventListener('change', updateChecklist));
+
+    document.querySelectorAll('.faq-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(other => {
+          other.classList.remove('open');
+          other.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
